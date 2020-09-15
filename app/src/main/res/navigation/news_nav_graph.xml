@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/news_nav_graph"
+    app:startDestination="@id/breakingNewsFragments">
+
+    <fragment
+        android:id="@+id/breakingNewsFragments"
+        android:name="com.androiddevs.mvvmnewsapp.ui.fragments.BreakingNewsFragments"
+        android:label="BreakingNewsFragments" >
+        <action
+            android:id="@+id/action_breakingNewsFragments_to_articleFragments"
+            app:destination="@id/articleFragments"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/articleFragments"
+        android:name="com.androiddevs.mvvmnewsapp.ui.fragments.ArticleFragments"
+        android:label="ArticleFragments" >
+        <argument
+            android:name="article"
+            app:argType="com.androiddevs.mvvmnewsapp.model.Article" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedNewsFragments"
+        android:name="com.androiddevs.mvvmnewsapp.ui.fragments.SavedNewsFragments"
+        android:label="SavedNewsFragments" >
+        <action
+            android:id="@+id/action_savedNewsFragments_to_articleFragments"
+            app:destination="@id/articleFragments"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/searchNewsFragments"
+        android:name="com.androiddevs.mvvmnewsapp.ui.fragments.SearchNewsFragments"
+        android:label="SearchNewsFragments" >
+        <action
+            android:id="@+id/action_searchNewsFragments_to_articleFragments"
+            app:destination="@id/articleFragments"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+</navigation>
